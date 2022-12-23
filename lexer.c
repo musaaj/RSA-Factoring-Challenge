@@ -11,7 +11,7 @@ void lex(FILE *fp)
 		n = atoll(line);
 		half = n >> 1;
 
-		while (half / 2 > 0)
+		while (half > 0)
 		{
 			long long factor = isfactor(n, half);
 			if (factor)
