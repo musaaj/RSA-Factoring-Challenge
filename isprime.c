@@ -1,6 +1,6 @@
 #include "factors.h"
 
-int isprime(long n)
+long long isprime(long long n)
 {
 	long half;
 
@@ -8,7 +8,7 @@ int isprime(long n)
 		return (1);
 	if (!isodd(n))
 		return (0);
-	half = n / 2;
+	half = n >> 1;
 	while (half >= 3)
 	{
 		if (isfactor(n, half))

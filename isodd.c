@@ -1,6 +1,6 @@
 #include "factors.h"
 
-int isodd(long n)
+long long isodd(long long n)
 {
-	return (int)(n % 2);
+	return (n % 2);
 }

@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #define BUF_SIZE 400
 
-int isprime(long);
-long isfactor(long, long);
-int isodd(long);
+long long isprime(long long);
+long long isfactor(long long, long long);
+long long isodd(long long);
 
 char *freadln(FILE *, char buffer[]);
 void lex(FILE *);
