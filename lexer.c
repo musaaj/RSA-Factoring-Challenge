@@ -3,23 +3,28 @@
 void lex(FILE *fp)
 {
 	char line[BUF_SIZE];
-	long long n, half;
+	u_int64_t n, half, i;
 
 	freadln(fp, line);
 	while(strlen(line))
 	{
-		n = atoll(line);
-		half = n >> 1;
-
-		while (half > 0)
+		n = _atol(line);
+		if (n == 0)
 		{
-			long long factor = isfactor(n, half);
+			fprintf(stderr, "Error: number overflow\n");
+			exit(1);
+		}
+		half = n >> 1;
+		i = 2;
+		while (i <= half)
+		{
+			u_int64_t factor = isfactor(n, i);
 			if (factor)
 			{
-				printf("%ld=%ld*%ld\n", n, half, factor);
+				printf("%s=%lld*%lld\n", line, factor, i);
 				break;
 			}
-			half >>= 1;
+			i++;
 		}
 		freadln(fp, line);
 	}

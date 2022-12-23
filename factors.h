@@ -7,8 +7,9 @@
 #define BUF_SIZE 400
 
 long long isprime(long long);
-long long isfactor(long long, long long);
+u_int64_t isfactor(u_int64_t, u_int64_t);
 long long isodd(long long);
+u_int64_t _atol(char *s);
 
 char *freadln(FILE *, char buffer[]);
 void lex(FILE *);

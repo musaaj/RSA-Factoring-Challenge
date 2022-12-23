@@ -16,8 +16,7 @@ char *freadln(FILE *fp, char buffer[])
 	{
 		if (c == '\n')
 		{
-			buffer[i] = '\n';
-			buffer[i + 1] = '\0';
+			buffer[i] = '\0';
 			return  (buffer);
 		}
 		buffer[i++] = c;
