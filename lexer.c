@@ -4,6 +4,7 @@ void lex(FILE *fp)
 {
 	char line[BUF_SIZE];
 	u_int64_t n, half, i;
+	__uint128_t a = 18234576894246378;
 
 	freadln(fp, line);
 	while(strlen(line))
@@ -21,7 +22,7 @@ void lex(FILE *fp)
 			u_int64_t factor = isfactor(n, i);
 			if (factor)
 			{
-				printf("%s=%lld*%lld\n", line, factor, i);
+				printf("%llu=%llu*%llu\n", n, factor, i);
 				break;
 			}
 			i++;
